@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sai Samruddhi Jute Agro Enterprises</title>
+
+<title>Sai Samruddhi</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -16,8 +17,8 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0b1d2a;
-color:#fff;
+background:#f5efe3;
+color:#2e3d2f;
 }
 
 /* NAVBAR */
@@ -25,139 +26,177 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 20px;
-background:#07121c;
-position:sticky;
-top:0;
+padding:15px 30px;
+background:#f5efe3;
+border-bottom:1px solid #ddd;
 }
 
-nav h2{
-color:#00c853;
+.logo{
+font-weight:bold;
+color:#2e7d32;
+font-size:18px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:20px;
 }
 
 nav a{
-color:#fff;
-margin-left:15px;
 text-decoration:none;
+color:#333;
 font-size:14px;
+}
+
+.quote-btn{
+background:#2e7d32;
+color:#fff;
+padding:8px 15px;
+border-radius:6px;
 }
 
 /* HERO */
 .hero{
-height:90vh;
+height:350px;
+background:url('https://images.unsplash.com/photo-1603048297172-c92544798d5a') no-repeat center/cover;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-padding:20px;
+padding:40px;
+color:white;
+}
+
+.hero-text{
+max-width:400px;
 }
 
 .hero h1{
-font-size:28px;
+font-size:32px;
 margin-bottom:10px;
 }
 
 .hero p{
 font-size:14px;
-opacity:0.8;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .hero button{
-padding:10px 20px;
+background:#2e7d32;
 border:none;
-background:#00c853;
-color:#fff;
+padding:10px 15px;
+color:white;
 border-radius:6px;
-cursor:pointer;
 }
 
-/* PRODUCTS */
-.products{
-padding:30px 15px;
-}
-
-.products h2{
-text-align:center;
-margin-bottom:20px;
-}
-
-.card-container{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.card{
-background:#132a3a;
-padding:15px;
-border-radius:10px;
-}
-
-.card h3{
-margin-bottom:8px;
-}
-
-.card p{
-font-size:13px;
-opacity:0.8;
+/* SECTION */
+.section{
+padding:30px 20px;
 }
 
 /* ABOUT */
 .about{
-padding:30px 15px;
-background:#07121c;
+display:flex;
+gap:20px;
+align-items:center;
 }
 
-.about h2{
+.about img{
+width:50%;
+border-radius:10px;
+}
+
+.about-text{
+width:50%;
+}
+
+/* PRODUCTS */
+.products{
 text-align:center;
-margin-bottom:15px;
 }
 
-.about p{
+.cards{
+display:flex;
+gap:15px;
+margin-top:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.card{
+background:white;
+width:250px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+.card h3{
+padding:10px;
+font-size:16px;
+}
+
+.card p{
 font-size:13px;
-line-height:1.6;
-opacity:0.85;
+padding-bottom:10px;
+}
+
+.view-btn{
+margin-top:15px;
+background:#2e7d32;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+}
+
+/* WHY */
+.why{
+text-align:center;
+}
+
+.why-box{
+display:flex;
+justify-content:space-around;
+margin-top:20px;
+}
+
+.why-item{
+width:30%;
 }
 
 /* CONTACT */
 .contact{
-padding:30px 15px;
-}
-
-.contact h2{
 text-align:center;
-margin-bottom:15px;
+background:#e6ddc6;
+padding:20px;
 }
 
-input, textarea{
-width:100%;
-padding:10px;
-margin:8px 0;
-border:none;
-border-radius:6px;
+.contact-box{
+display:flex;
+justify-content:space-around;
+margin-top:15px;
+flex-wrap:wrap;
+gap:10px;
 }
 
-button.submit{
-width:100%;
+.contact-item{
+background:white;
 padding:10px;
-background:#00c853;
-border:none;
-color:#fff;
-border-radius:6px;
+border-radius:8px;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
-padding:15px;
-background:#07121c;
+padding:10px;
 font-size:12px;
-opacity:0.7;
 }
-
 </style>
 </head>
 
@@ -165,98 +204,105 @@ opacity:0.7;
 
 <!-- NAVBAR -->
 <nav>
-<h2>🌾 Sai Samruddhi</h2>
-<div>
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</div>
+<div class="logo">🌿 Sai Samruddhi</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+<div class="quote-btn">Get Quote</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-<h1>Eco-Friendly Jute Solutions</h1>
-<p>Strong • Durable • Customizable Packaging for Agriculture & Industry</p>
-<button onclick="scrollToProducts()">Explore Products</button>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products" id="products">
-<h2>Our Products</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>50kg Paddy Bags</h3>
-<p>High quality jute bags specially designed for paddy storage.</p>
+<div class="hero">
+<div class="hero-text">
+<h1>Eco-Friendly Jute & Agro Solutions</h1>
+<p>Sustainable Jute & Carry Bags for Grains & Everyday Use</p>
+<button>Get in Touch</button>
 </div>
-
-<div class="card">
-<h3>60-70kg Sugar & Wheat Bags</h3>
-<p>Extra strong bags for heavy load transport & storage.</p>
 </div>
-
-<div class="card">
-<h3>Custom Printed Bags</h3>
-<p>We design bags based on your brand & requirement.</p>
-</div>
-
-<div class="card">
-<h3>Eco Jute Toys</h3>
-<p>Recycled jute products turned into safe toys for children.</p>
-</div>
-
-<div class="card">
-<h3>Small Carry Bags (Future)</h3>
-<p>2kg & 5kg eco-friendly alternative to plastic bags.</p>
-</div>
-
-</div>
-</section>
 
 <!-- ABOUT -->
-<section class="about">
+<div class="section about">
+<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a">
+
+<div class="about-text">
 <h2>About Us</h2>
+<p>We manufacture durable and eco-friendly jute gunny bags and carry bags for storing grains and daily use.</p>
+<p>Custom-made to meet your needs.</p>
+</div>
+</div>
 
-<p>
-Sai Samruddhi Jute Agro Enterprises ek agro-based company hai jo eco-friendly jute products manufacture karti hai. 
-Humara focus hai strong, durable aur customized packaging solutions provide karna.
-</p>
+<!-- PRODUCTS -->
+<div class="section products">
+<h2>Our Products</h2>
 
-<p>
-Hum paddy ke liye 50kg bags, sugar aur wheat ke liye 60-70kg bags banate hain. 
-Customer ke requirement ke hisaab se custom printed bags bhi banate hain.
-</p>
+<div class="cards">
 
-<p>
-Humara aim hai plastic ko replace karna aur environment-friendly solutions provide karna.
-</p>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1592928302636-c83cf1c5d0e1">
+<h3>Paddy & Rice Gunny Bags</h3>
+<p>Strong 50 kg bags</p>
+</div>
 
-</section>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
+<h3>Sugar & Wheat Gunny Bags</h3>
+<p>Heavy-duty 60/70 kg bags</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<h3>Kids' Toy from Gunny Bags</h3>
+<p>Reusable from jute fabric</p>
+</div>
+
+</div>
+
+<button class="view-btn">View All Products</button>
+</div>
+
+<!-- WHY -->
+<div class="section why">
+<h2>Why Choose Us?</h2>
+
+<div class="why-box">
+<div class="why-item">
+<h4>Customized for Your Needs</h4>
+<p>High Quality Jute</p>
+</div>
+
+<div class="why-item">
+<h4>Eco-Friendly & Durable</h4>
+<p>Tailored for Grains & Use</p>
+</div>
+
+<div class="why-item">
+<h4>Various Sizes Available</h4>
+<p>Plastic-Free Solution</p>
+</div>
+</div>
+</div>
 
 <!-- CONTACT -->
-<section class="contact">
-<h2>Contact Us</h2>
+<div class="contact">
+<h2>Get in Touch</h2>
+<p>Contact us for any inquiries or orders</p>
 
-<input type="text" placeholder="Your Name">
-<input type="text" placeholder="Phone Number">
-<textarea placeholder="Your Requirement"></textarea>
-
-<button class="submit">Send Inquiry</button>
-
-</section>
+<div class="contact-box">
+<div class="contact-item">📞 +91 9876543210</div>
+<div class="contact-item">📧 info@saisamruddhi.com</div>
+<div class="contact-item">💬 WhatsApp Us</div>
+</div>
+</div>
 
 <!-- FOOTER -->
 <footer>
 © 2026 Sai Samruddhi Jute Agro Enterprises
 </footer>
-
-<script>
-function scrollToProducts(){
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-}
-</script>
 
 </body>
 </html>
