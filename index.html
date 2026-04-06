@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Samruddhi Jute Agro Enterprises</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0b1d2a;
+color:#fff;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+background:#07121c;
+position:sticky;
+top:0;
+}
+
+nav h2{
+color:#00c853;
+}
+
+nav a{
+color:#fff;
+margin-left:15px;
+text-decoration:none;
+font-size:14px;
+}
+
+/* HERO */
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+padding:20px;
+}
+
+.hero h1{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:14px;
+opacity:0.8;
+margin-bottom:20px;
+}
+
+.hero button{
+padding:10px 20px;
+border:none;
+background:#00c853;
+color:#fff;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* PRODUCTS */
+.products{
+padding:30px 15px;
+}
+
+.products h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.card-container{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.card{
+background:#132a3a;
+padding:15px;
+border-radius:10px;
+}
+
+.card h3{
+margin-bottom:8px;
+}
+
+.card p{
+font-size:13px;
+opacity:0.8;
+}
+
+/* ABOUT */
+.about{
+padding:30px 15px;
+background:#07121c;
+}
+
+.about h2{
+text-align:center;
+margin-bottom:15px;
+}
+
+.about p{
+font-size:13px;
+line-height:1.6;
+opacity:0.85;
+}
+
+/* CONTACT */
+.contact{
+padding:30px 15px;
+}
+
+.contact h2{
+text-align:center;
+margin-bottom:15px;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:none;
+border-radius:6px;
+}
+
+button.submit{
+width:100%;
+padding:10px;
+background:#00c853;
+border:none;
+color:#fff;
+border-radius:6px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:15px;
+background:#07121c;
+font-size:12px;
+opacity:0.7;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<h2>🌾 Sai Samruddhi</h2>
+<div>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Eco-Friendly Jute Solutions</h1>
+<p>Strong • Durable • Customizable Packaging for Agriculture & Industry</p>
+<button onclick="scrollToProducts()">Explore Products</button>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+<h2>Our Products</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>50kg Paddy Bags</h3>
+<p>High quality jute bags specially designed for paddy storage.</p>
+</div>
+
+<div class="card">
+<h3>60-70kg Sugar & Wheat Bags</h3>
+<p>Extra strong bags for heavy load transport & storage.</p>
+</div>
+
+<div class="card">
+<h3>Custom Printed Bags</h3>
+<p>We design bags based on your brand & requirement.</p>
+</div>
+
+<div class="card">
+<h3>Eco Jute Toys</h3>
+<p>Recycled jute products turned into safe toys for children.</p>
+</div>
+
+<div class="card">
+<h3>Small Carry Bags (Future)</h3>
+<p>2kg & 5kg eco-friendly alternative to plastic bags.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+<h2>About Us</h2>
+
+<p>
+Sai Samruddhi Jute Agro Enterprises ek agro-based company hai jo eco-friendly jute products manufacture karti hai. 
+Humara focus hai strong, durable aur customized packaging solutions provide karna.
+</p>
+
+<p>
+Hum paddy ke liye 50kg bags, sugar aur wheat ke liye 60-70kg bags banate hain. 
+Customer ke requirement ke hisaab se custom printed bags bhi banate hain.
+</p>
+
+<p>
+Humara aim hai plastic ko replace karna aur environment-friendly solutions provide karna.
+</p>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+<h2>Contact Us</h2>
+
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Phone Number">
+<textarea placeholder="Your Requirement"></textarea>
+
+<button class="submit">Send Inquiry</button>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Sai Samruddhi Jute Agro Enterprises
+</footer>
+
+<script>
+function scrollToProducts(){
+document.getElementById("products").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
