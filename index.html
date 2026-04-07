@@ -1,308 +1,828 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Samruddhi Jute Agro Enterprises</title>
 
-<title>Sai Samruddhi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:opsz@9..40&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #efe5d1;
+      --line: #cdbf9e;
+      --green: #3f6f2d;
+      --green-dark: #2f5821;
+      --text: #2e2a22;
+      --card: #f8f1e4;
+      --shadow: 0 8px 20px rgba(72, 57, 24, 0.10);
+      --container: 1180px;
+    }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body{
-background:#f5efe3;
-color:#2e3d2f;
-}
+    html{
+      scroll-behavior: smooth;
+    }
 
-/* NAVBAR */
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-background:#f5efe3;
-border-bottom:1px solid #ddd;
-}
+    body{
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+    }
 
-.logo{
-font-weight:bold;
-color:#2e7d32;
-font-size:18px;
-}
+    img{
+      display: block;
+      max-width: 100%;
+    }
 
-nav ul{
-display:flex;
-list-style:none;
-gap:20px;
-}
+    a{
+      text-decoration: none;
+      color: inherit;
+    }
 
-nav a{
-text-decoration:none;
-color:#333;
-font-size:14px;
-}
+    .container{
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.quote-btn{
-background:#2e7d32;
-color:#fff;
-padding:8px 15px;
-border-radius:6px;
-}
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image: radial-gradient(rgba(90,70,25,.18) 0.6px, transparent 0.6px);
+      background-size: 7px 7px;
+      mix-blend-mode: multiply;
+    }
 
-/* HERO */
-.hero{
-height:350px;
-background:url('https://images.unsplash.com/photo-1603048297172-c92544798d5a') no-repeat center/cover;
-display:flex;
-align-items:center;
-padding:40px;
-color:white;
-}
+    .navbar-wrap{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(239, 229, 209, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(120, 98, 44, 0.12);
+    }
 
-.hero-text{
-max-width:400px;
-}
+    .navbar{
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-.hero h1{
-font-size:32px;
-margin-bottom:10px;
-}
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
 
-.hero p{
-font-size:14px;
-margin-bottom:15px;
-}
+    .brand-mark{
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #4e8838, #2f5821);
+      position: relative;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.2);
+      flex: 0 0 auto;
+    }
 
-.hero button{
-background:#2e7d32;
-border:none;
-padding:10px 15px;
-color:white;
-border-radius:6px;
-}
+    .brand-mark::before,
+    .brand-mark::after{
+      content:"";
+      position:absolute;
+      background:#dceccb;
+      border-radius: 100% 0 100% 0;
+      transform: rotate(-30deg);
+    }
 
-/* SECTION */
-.section{
-padding:30px 20px;
-}
+    .brand-mark::before{
+      width: 18px;
+      height: 26px;
+      left: 14px;
+      top: 10px;
+    }
 
-/* ABOUT */
-.about{
-display:flex;
-gap:20px;
-align-items:center;
-}
+    .brand-mark::after{
+      width: 16px;
+      height: 22px;
+      left: 28px;
+      top: 19px;
+    }
 
-.about img{
-width:50%;
-border-radius:10px;
-}
+    .brand-text{
+      min-width: 0;
+    }
 
-.about-text{
-width:50%;
-}
+    .brand-title{
+      font-family: "DM Serif Display", serif;
+      color: var(--green);
+      font-size: 1.22rem;
+      line-height: 1.05;
+      white-space: nowrap;
+    }
 
-/* PRODUCTS */
-.products{
-text-align:center;
-}
+    .brand-sub{
+      color: #6f7c45;
+      font-size: 0.95rem;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
 
-.cards{
-display:flex;
-gap:15px;
-margin-top:20px;
-flex-wrap:wrap;
-justify-content:center;
-}
+    .nav-links{
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-weight: 600;
+      color: #5d604d;
+    }
 
-.card{
-background:white;
-width:250px;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
+    .nav-links a{
+      position: relative;
+      padding: 4px 0;
+    }
 
-.card img{
-width:100%;
-height:150px;
-object-fit:cover;
-}
+    .nav-links a.active::after,
+    .nav-links a:hover::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-8px;
+      height:3px;
+      border-radius:99px;
+      background: var(--green);
+    }
 
-.card h3{
-padding:10px;
-font-size:16px;
-}
+    .quote-btn{
+      background: linear-gradient(180deg, #497b36, #315e24);
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(44, 78, 29, 0.22);
+      white-space: nowrap;
+    }
 
-.card p{
-font-size:13px;
-padding-bottom:10px;
-}
+    .hero-section{
+      padding-top: 8px;
+    }
 
-.view-btn{
-margin-top:15px;
-background:#2e7d32;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-}
+    .hero-card{
+      position: relative;
+      overflow: hidden;
+      border-top: 2px solid rgba(94, 76, 34, 0.45);
+      border-bottom: 2px solid rgba(94, 76, 34, 0.45);
+      min-height: 430px;
+      display: flex;
+      align-items: stretch;
+    }
 
-/* WHY */
-.why{
-text-align:center;
-}
+    .hero-bg{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.why-box{
-display:flex;
-justify-content:space-around;
-margin-top:20px;
-}
+    .hero-overlay{
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(40,36,22,.58) 0%, rgba(40,36,22,.34) 34%, rgba(40,36,22,.08) 64%, rgba(40,36,22,.02) 100%);
+    }
 
-.why-item{
-width:30%;
-}
+    .hero-content{
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 42px 50px;
+    }
 
-/* CONTACT */
-.contact{
-text-align:center;
-background:#e6ddc6;
-padding:20px;
-}
+    .hero-copy{
+      max-width: 560px;
+      color: #f4ead2;
+    }
 
-.contact-box{
-display:flex;
-justify-content:space-around;
-margin-top:15px;
-flex-wrap:wrap;
-gap:10px;
-}
+    .hero-title{
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.5rem, 4vw, 4.55rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      text-shadow: 0 3px 10px rgba(0,0,0,.18);
+    }
 
-.contact-item{
-background:white;
-padding:10px;
-border-radius:8px;
-}
+    .hero-sub{
+      margin-top: 14px;
+      font-size: clamp(1rem, 1.4vw, 1.55rem);
+      font-weight: 700;
+      color: #eef3cf;
+      text-shadow: 0 2px 8px rgba(0,0,0,.16);
+      position: relative;
+      display: inline-block;
+      padding-top: 6px;
+    }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:10px;
-font-size:12px;
-}
-</style>
+    .hero-sub::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      max-width: 470px;
+      height: 3px;
+      background: rgba(255, 248, 220, 0.65);
+      border-radius: 999px;
+    }
+
+    .hero-cta{
+      display: inline-block;
+      margin-top: 28px;
+      background: linear-gradient(180deg, #4a7d35, #315e24);
+      color:#fff;
+      padding: 18px 34px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      box-shadow: 0 10px 22px rgba(40, 70, 29, .25);
+    }
+
+    .section-title-wrap{
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .section-title-wrap::before,
+    .section-title-wrap::after{
+      content:"";
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+    }
+
+    .section-title{
+      font-family: "DM Serif Display", serif;
+      color: var(--green-dark);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1;
+      text-align: center;
+    }
+
+    .about-section{
+      padding: 38px 0 28px;
+    }
+
+    .about-grid{
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-title{
+      font-family: "DM Serif Display", serif;
+      color: var(--green-dark);
+      font-size: clamp(2.1rem, 3vw, 3.2rem);
+      line-height: 1;
+      margin-bottom: 22px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .about-title::after{
+      content:"";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: min(520px, 62vw);
+      height: 2px;
+      background: linear-gradient(90deg, rgba(94,76,34,.35), rgba(94,76,34,.15), transparent);
+    }
+
+    .about-copy{
+      font-size: 1.1rem;
+      color: #403729;
+      line-height: 1.72;
+      max-width: 630px;
+    }
+
+    .about-copy p + p{
+      margin-top: 8px;
+    }
+
+    .about-visual{
+      overflow: hidden;
+      min-height: 320px;
+    }
+
+    .about-visual img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .products-section{
+      padding: 20px 0 34px;
+    }
+
+    .product-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card{
+      background: rgba(252, 246, 235, 0.82);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(110, 82, 28, 0.08);
+    }
+
+    .product-card img{
+      width: 100%;
+      height: 245px;
+      object-fit: cover;
+    }
+
+    .product-card-body{
+      padding: 16px 16px 18px;
+      text-align: center;
+    }
+
+    .product-card h3{
+      font-family: "DM Serif Display", serif;
+      color: var(--green-dark);
+      font-size: 1.08rem;
+      line-height: 1.15;
+    }
+
+    .product-meta{
+      margin-top: 6px;
+      color: #4f493c;
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+
+    .center-btn{
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .primary-btn{
+      background: linear-gradient(180deg, #4a7d35, #315e24);
+      color:#fff;
+      padding: 18px 42px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      box-shadow: 0 10px 22px rgba(40, 70, 29, .22);
+      display: inline-block;
+    }
+
+    .why-section{
+      padding: 18px 0 36px;
+    }
+
+    .why-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .why-item{
+      padding: 10px 16px 0;
+      position: relative;
+    }
+
+    .why-item:not(:last-child)::after{
+      content:"";
+      position:absolute;
+      top: 18px;
+      right: -5px;
+      width: 1px;
+      height: 130px;
+      background: rgba(115, 94, 44, 0.18);
+    }
+
+    .why-icon{
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      background: radial-gradient(circle at 35% 30%, #e9e7c5, #d8d2ad 60%, #c2be98 100%);
+      box-shadow: inset 0 0 0 10px rgba(255,255,255,.28), 0 10px 20px rgba(80, 62, 24, .08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--green);
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .why-item h4{
+      font-family: "DM Serif Display", serif;
+      color: var(--green-dark);
+      font-size: 1.05rem;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .why-list{
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(115, 94, 44, 0.24);
+    }
+
+    .why-point{
+      font-size: 0.98rem;
+      color: #433c2e;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .why-point .tick{
+      color: var(--green);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .contact-section{
+      position: relative;
+      padding: 34px 0 42px;
+      background: linear-gradient(180deg, rgba(226,216,182,0.35), rgba(208,222,178,0.45) 52%, rgba(184,203,154,0.35) 100%);
+      overflow: hidden;
+    }
+
+    .contact-section::before,
+    .contact-section::after{
+      content:"";
+      position:absolute;
+      bottom: 0;
+      width: 180px;
+      height: 120px;
+      background:
+        radial-gradient(circle at 20% 100%, rgba(85,122,52,.55) 0 8%, transparent 9%),
+        radial-gradient(circle at 35% 88%, rgba(85,122,52,.55) 0 8%, transparent 9%),
+        radial-gradient(circle at 50% 100%, rgba(85,122,52,.55) 0 8%, transparent 9%),
+        radial-gradient(circle at 65% 84%, rgba(85,122,52,.55) 0 8%, transparent 9%),
+        radial-gradient(circle at 80% 100%, rgba(85,122,52,.55) 0 8%, transparent 9%);
+      opacity: .7;
+      pointer-events: none;
+    }
+
+    .contact-section::before{ left: 0; }
+    .contact-section::after{ right: 0; transform: scaleX(-1); }
+
+    .contact-sub{
+      text-align: center;
+      color: #4d4637;
+      margin-top: -4px;
+      font-size: 1.08rem;
+    }
+
+    .contact-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .contact-card{
+      background: rgba(255,248,234,0.82);
+      border: 1px solid rgba(101, 81, 35, .1);
+      border-radius: 12px;
+      min-height: 76px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+      color: #3f3a2d;
+      text-align: center;
+    }
+
+    .contact-card.green{
+      background: linear-gradient(180deg, #4a7d35, #315e24);
+      color: #fff;
+    }
+
+    .contact-card .icon{
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .socials{
+      margin-top: 24px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap: 18px;
+    }
+
+    .socials::before,
+    .socials::after{
+      content:"";
+      width: 120px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(93,74,31,.45), transparent);
+    }
+
+    .social{
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: rgba(255,247,231,.9);
+      color: var(--green-dark);
+      box-shadow: 0 6px 14px rgba(70, 56, 24, .12);
+      font-weight: 800;
+    }
+
+    .menu-toggle{
+      display:none;
+    }
+
+    @media (max-width: 900px){
+      .nav-links{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:block;
+        font-size: 1.8rem;
+        color: var(--green-dark);
+        background:none;
+        border:none;
+      }
+
+      .quote-btn{
+        display:none;
+      }
+
+      .about-grid,
+      .product-grid,
+      .why-grid,
+      .why-list,
+      .contact-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .why-item:not(:last-child)::after{
+        display:none;
+      }
+
+      .hero-content{
+        padding: 34px 24px;
+      }
+
+      .hero-card{
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 600px){
+      .container{
+        width: min(100% - 20px, 1180px);
+      }
+
+      .brand-mark{
+        width: 46px;
+        height: 46px;
+      }
+
+      .brand-title{
+        font-size: 1rem;
+        white-space: normal;
+      }
+
+      .brand-sub{
+        font-size: 0.78rem;
+        white-space: normal;
+      }
+
+      .hero-title{
+        font-size: 2.2rem;
+      }
+
+      .hero-sub{
+        font-size: 0.95rem;
+      }
+
+      .hero-cta{
+        padding: 14px 22px;
+        font-size: 0.98rem;
+      }
+
+      .section-title{
+        font-size: 2rem;
+      }
+
+      .about-copy{
+        font-size: 1rem;
+      }
+
+      .product-card img{
+        height: 220px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-<div class="logo">🌿 Sai Samruddhi</div>
+  <div class="navbar-wrap">
+    <div class="container">
+      <nav class="navbar">
+        <div class="brand">
+          <div class="brand-mark"></div>
+          <div class="brand-text">
+            <div class="brand-title">Sai Samruddhi</div>
+            <div class="brand-sub">Jute Agro Enterprises</div>
+          </div>
+        </div>
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Products</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
+        <div class="nav-links">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#products">Products</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-<div class="quote-btn">Get Quote</div>
-</nav>
+        <a href="#contact" class="quote-btn">Get Quote</a>
+        <button class="menu-toggle" aria-label="menu">☰</button>
+      </nav>
+    </div>
+  </div>
 
-<!-- HERO -->
-<div class="hero">
-<div class="hero-text">
-<h1>Eco-Friendly Jute & Agro Solutions</h1>
-<p>Sustainable Jute & Carry Bags for Grains & Everyday Use</p>
-<button>Get in Touch</button>
-</div>
-</div>
+  <section class="hero-section" id="home">
+    <div class="hero-card">
+      <img src="hero.png" alt="Jute and agro hero" class="hero-bg">
+      <div class="hero-overlay"></div>
 
-<!-- ABOUT -->
-<div class="section about">
-<img src="https://images.unsplash.com/photo-1603048297172-c92544798d5a">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <h1 class="hero-title">Eco-Friendly<br>Jute &amp; Agro Solutions</h1>
+          <div class="hero-sub">Sustainable Jute &amp; Carry Bags for Grains &amp; Everyday Use</div>
+          <a href="#contact" class="hero-cta">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="about-text">
-<h2>About Us</h2>
-<p>We manufacture durable and eco-friendly jute gunny bags and carry bags for storing grains and daily use.</p>
-<p>Custom-made to meet your needs.</p>
-</div>
-</div>
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <div>
+        <h2 class="about-title">About Us</h2>
+        <div class="about-copy">
+          <p>We manufacture durable and eco-friendly jute gunny bags and carry bags for storing grains and daily use.</p>
+          <p>Custom-made to meet your needs.</p>
+        </div>
+      </div>
 
-<!-- PRODUCTS -->
-<div class="section products">
-<h2>Our Products</h2>
+      <div class="about-visual">
+        <img src="about.png" alt="About Sai Samruddhi Jute Agro Enterprises">
+      </div>
+    </div>
+  </section>
 
-<div class="cards">
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div></div>
+        <h2 class="section-title">Our Products</h2>
+        <div></div>
+      </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1592928302636-c83cf1c5d0e1">
-<h3>Paddy & Rice Gunny Bags</h3>
-<p>Strong 50 kg bags</p>
-</div>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="product1.png" alt="Paddy and rice gunny bags">
+          <div class="product-card-body">
+            <h3>Paddy &amp; Rice Gunny Bags</h3>
+            <div class="product-meta">Strong 50 kg bags</div>
+          </div>
+        </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
-<h3>Sugar & Wheat Gunny Bags</h3>
-<p>Heavy-duty 60/70 kg bags</p>
-</div>
+        <div class="product-card">
+          <img src="product2.png" alt="Sugar and wheat gunny bags">
+          <div class="product-card-body">
+            <h3>Sugar &amp; Wheat Gunny Bags</h3>
+            <div class="product-meta">Heavy-duty 60/70 kg bags</div>
+          </div>
+        </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<h3>Kids' Toy from Gunny Bags</h3>
-<p>Reusable from jute fabric</p>
-</div>
+        <div class="product-card">
+          <img src="product3.png" alt="Kids toy from gunny bags">
+          <div class="product-card-body">
+            <h3>Kids' Toy from Gunny Bags</h3>
+            <div class="product-meta">Reusable from jute fabric</div>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <div class="center-btn">
+        <a href="#contact" class="primary-btn">View All Products</a>
+      </div>
+    </div>
+  </section>
 
-<button class="view-btn">View All Products</button>
-</div>
+  <section class="why-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div></div>
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div></div>
+      </div>
 
-<!-- WHY -->
-<div class="section why">
-<h2>Why Choose Us?</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">✦</div>
+          <h4>Customized for Your Needs</h4>
+        </div>
 
-<div class="why-box">
-<div class="why-item">
-<h4>Customized for Your Needs</h4>
-<p>High Quality Jute</p>
-</div>
+        <div class="why-item">
+          <div class="why-icon">♻</div>
+          <h4>Eco-Friendly &amp; Durable</h4>
+        </div>
 
-<div class="why-item">
-<h4>Eco-Friendly & Durable</h4>
-<p>Tailored for Grains & Use</p>
-</div>
+        <div class="why-item">
+          <div class="why-icon">▣</div>
+          <h4>Various Sizes Available</h4>
+        </div>
+      </div>
 
-<div class="why-item">
-<h4>Various Sizes Available</h4>
-<p>Plastic-Free Solution</p>
-</div>
-</div>
-</div>
+      <div class="why-list">
+        <div class="why-point"><span class="tick">✓</span> High Quality Jute</div>
+        <div class="why-point"><span class="tick">✓</span> Tailored for Grains &amp; Use</div>
+        <div class="why-point"><span class="tick">✓</span> Plastic-Free Solution</div>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<div class="contact">
-<h2>Get in Touch</h2>
-<p>Contact us for any inquiries or orders</p>
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div></div>
+        <h2 class="section-title">Get in Touch</h2>
+        <div></div>
+      </div>
 
-<div class="contact-box">
-<div class="contact-item">📞 +91 9876543210</div>
-<div class="contact-item">📧 info@saisamruddhi.com</div>
-<div class="contact-item">💬 WhatsApp Us</div>
-</div>
-</div>
+      <p class="contact-sub">Contact us for any inquiries or orders</p>
 
-<!-- FOOTER -->
-<footer>
-© 2026 Sai Samruddhi Jute Agro Enterprises
-</footer>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="icon">📞</span>
+          <span>Call: +91 7064855983</span>
+        </div>
+
+        <div class="contact-card">
+          <span class="icon">✉</span>
+          <span>Email: info@saisamruddhi.com</span>
+        </div>
+
+        <a class="contact-card green" href="https://wa.me/917064855983" target="_blank" rel="noopener noreferrer">
+          <span class="icon">🟢</span>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+
+      <div class="socials">
+        <a class="social" href="#">f</a>
+        <a class="social" href="#">x</a>
+        <a class="social" href="#">◎</a>
+      </div>
+    </div>
+  </section>
 
 </body>
-</html>
+        </html>
